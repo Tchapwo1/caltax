@@ -24,11 +24,14 @@ export const InputPanel: React.FC = () => {
   const isAdvancedOpen = status === 'advanced_open'
 
   return (
-    <div className="flex flex-col gap-space_6 p-space_6 bg-background_primary rounded-lg shadow-sm border border-border_default h-fit">
-      <div className="flex flex-col gap-space_1">
-        <h2 className="text-lg font-bold text-text_primary">Your Income</h2>
-        <p className="text-sm text-text_secondary">Enter your annual pre-tax earnings</p>
-      </div>
+    <div className="flex flex-col gap-space_8 p-space_6 md:p-space_8 bg-background_surface rounded-2xl shadow-sm border border-border_default h-fit">
+      <div className="flex flex-col gap-space_6">
+        <div className="flex items-center gap-space_3 border-b border-border_default pb-space_4">
+          <div className="w-8 h-8 rounded-full bg-action/10 flex items-center justify-center text-action">
+            <span className="font-bold text-xs uppercase">01</span>
+          </div>
+          <h2 className="text-xl font-black text-text_primary tracking-tight">Your Situation</h2>
+        </div>
 
       <div className="flex flex-col gap-space_6">
         <GrossIncomeInput />
@@ -51,8 +54,15 @@ export const InputPanel: React.FC = () => {
           onChange={(v) => updateInput({ isBlind: v })}
         />
       </div>
+    </div>
 
-      <div className="pt-space_2">
+    <div className="pt-space_2">
+        <div className="flex items-center gap-space_3 border-b border-border_default pb-space_4 mb-space_6">
+          <div className="w-8 h-8 rounded-full bg-action/10 flex items-center justify-center text-action">
+            <span className="font-bold text-xs uppercase">02</span>
+          </div>
+          <h2 className="text-xl font-black text-text_primary tracking-tight">Deductions</h2>
+        </div>
         <Accordion
           id="advanced-options"
           title="Advanced Options"

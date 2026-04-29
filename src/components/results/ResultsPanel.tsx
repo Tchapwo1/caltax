@@ -10,6 +10,7 @@ import { TaxBreakdownTable } from './TaxBreakdownTable'
 import { AlertBanner } from './AlertBanner'
 import { SankeyWrapper } from './SankeyWrapper'
 import { ShareLink } from './ShareLink'
+import { PaymentPlanner } from './PaymentPlanner'
 import { useCalculatorStore } from '@/lib/store/calculator.store'
 
 export const ResultsPanel: React.FC = () => {
@@ -28,6 +29,7 @@ export const ResultsPanel: React.FC = () => {
               <ShareLink />
             </div>
             <AlertBanner />
+            <PaymentPlanner />
             <SankeyWrapper />
             <TaxBreakdownTable />
           </>

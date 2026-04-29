@@ -11,6 +11,7 @@ import { loadTaxYear, getAvailableTaxYears } from '@/lib/store/taxYear'
 import { CalculatorContainer } from '@/components/CalculatorContainer'
 import { JSONLD } from '@/components/seo/JSONLD'
 import { decodeStateFromURL } from '@/lib/store/url'
+import { TaxYearGuide } from '@/components/seo/TaxYearGuide'
 
 interface PageProps {
   params: { year: string }
@@ -88,25 +89,7 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
 
         <CalculatorContainer config={config} initialInput={initialInput} />
         
-        {/* Phase 8: Content Structure */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-space_8 mt-space_10 border-t border-border_default pt-space_10">
-          <div className="flex flex-col gap-space_4">
-            <h2 className="text-xl font-bold text-text_primary">How it works</h2>
-            <p className="text-sm text-text_secondary leading-relaxed">
-              This calculator uses the official HMRC tax bands and thresholds for the {displayYear} tax year. 
-              We calculate your tax using a deterministic logic engine that handles Personal Allowance tapering, 
-              Scottish tax bands, and various student loan plans.
-            </p>
-          </div>
-          <div className="flex flex-col gap-space_4">
-            <h2 className="text-xl font-bold text-text_primary">Salary Sacrifice</h2>
-            <p className="text-sm text-text_secondary leading-relaxed">
-              By contributing to your pension via salary sacrifice, you reduce your taxable gross income. 
-              This not only lowers your Income Tax but also your National Insurance contributions, 
-              and can help you avoid "tax traps" where your Personal Allowance is withdrawn.
-            </p>
-          </div>
-        </section>
+        <TaxYearGuide config={config} />
       </div>
     </main>
   )
