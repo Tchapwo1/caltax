@@ -66,7 +66,7 @@ export const SummaryCard: React.FC = () => {
             </span>
             <div className="flex-1 h-2 bg-border_default rounded-full overflow-hidden">
               <div 
-                className="h-full bg-net_profit transition-all duration-slow" 
+                className="h-full bg-accent_primary transition-all duration-slow" 
                 style={{ width: `${Math.min(100, output.effectiveTaxRate * 100)}%` }} 
               />
             </div>

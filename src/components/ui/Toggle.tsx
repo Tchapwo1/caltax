@@ -42,7 +42,7 @@ export const Toggle: React.FC<ToggleProps> = ({
         className={`
           relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent 
           transition-colors duration-200 ease-in-out outline-none
-          ${checked ? 'bg-net_profit' : 'bg-border_default'}
+          ${checked ? 'bg-accent_primary' : 'bg-border_default'}
         `}
       >
         <span

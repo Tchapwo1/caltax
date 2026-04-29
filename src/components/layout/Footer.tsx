@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           {/* Logo & Info */}
           <div className="md:col-span-1 flex flex-col gap-6">
             <Link href="/" className="text-3xl font-black text-text_primary tracking-tighter">
-              taxcalculator365<span className="text-net_profit">.</span>
+              taxcalculator365<span className="text-accent_primary">.</span>
             </Link>
             <p className="text-sm font-medium text-text_primary opacity-60 leading-relaxed">
               We make taxes simple. The UK's most loved tax filing platform.
@@ -68,9 +68,9 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} TaxCalculator365. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-net_profit transition-colors text-text_primary">𝕏</Link>
-            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-net_profit transition-colors text-text_primary">in</Link>
-            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-net_profit transition-colors text-text_primary">ig</Link>
+            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-accent_primary transition-colors text-text_primary">𝕏</Link>
+            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-accent_primary transition-colors text-text_primary">in</Link>
+            <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-accent_primary transition-colors text-text_primary">ig</Link>
           </div>
         </div>
       </div>

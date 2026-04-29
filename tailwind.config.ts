@@ -9,18 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        text_primary: '#1C3C24', // Taxfix Forest Green
-        text_secondary: '#1C3C24BF', // 75% Forest Green
-        background_primary: '#FFFFFF',
-        background_surface: '#F8F9F7',
-        net_profit: '#A8F05F', // Taxfix Lime Button
-        deduction: '#FF9F1C', 
-        alert: '#FF4D4D',
-        action: '#A8F05F', // Primary action is now the Lime Green
-        taxfix_lime: '#D2F5A9', // Background Lime
-        taxfix_purple: '#DCC8FF', // CTA Purple
-        border_default: '#E2E8F0',
-        border_active: '#1C3C24',
+        background_primary: "#FFFFFF",
+        background_surface: "#FAFAFA",
+        text_primary: "#18181B",
+        text_secondary: "#52525B",
+        accent_primary: "#FF5A1F",
+        accent_hover: "#E04E19",
+        accent_light: "#FFF7ED", // Light orange for banners
+        border_default: "#E4E4E7",
+        taxfix_purple: "#18181B", // Repurposing as our primary dark brand color
+        net_profit: "#10B981", // Success green remains standard
+        tax_red: "#EF4444",
+        ni_blue: "#3B82F6",
+        pension_orange: "#F59E0B",
+        border_active: '#18181B',
       },
       backgroundImage: {
         'action-gradient': 'linear-gradient(135deg, #5037ED 0%, #7C3AED 100%)',

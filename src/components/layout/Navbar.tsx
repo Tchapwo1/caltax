@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1 group">
           <span className="text-3xl font-black text-text_primary tracking-tighter">
-            taxcalculator365<span className="text-net_profit">.</span>
+            taxcalculator365<span className="text-accent_primary">.</span>
           </span>
         </Link>
 
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
           <Link href="/login" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Log in</Link>
           <Link 
             href="/get-started" 
-            className="bg-net_profit text-text_primary px-6 py-3 rounded-full text-sm font-black hover:scale-105 transition-all shadow-sm"
+            className="bg-accent_primary text-white px-6 py-3 rounded-full text-sm font-black hover:scale-105 transition-all shadow-sm"
           >
             Get started
           </Link>
@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
           <Link href="/resources" className="text-lg font-bold text-text_primary">Resources</Link>
           <div className="h-px bg-border_default my-2" />
           <Link href="/login" className="text-lg font-bold text-text_primary">Log in</Link>
-          <Link href="/get-started" className="bg-net_profit text-text_primary px-4 py-4 rounded-full text-center font-black">Get started</Link>
+          <Link href="/get-started" className="bg-accent_primary text-white px-4 py-4 rounded-full text-center font-black">Get started</Link>
         </div>
       )}
     </header>

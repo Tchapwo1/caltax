@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export const NoticeBar: React.FC = () => {
   return (
-    <section className="bg-taxfix_lime py-8">
+    <section className="bg-accent_light py-8">
       <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col gap-1">
           <h2 className="text-2xl md:text-3xl font-black text-text_primary tracking-tight">Our MTD service is here!</h2>

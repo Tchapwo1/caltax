@@ -28,12 +28,12 @@ const SankeyDiagram: React.FC = () => {
     const net = output.netPay
 
     return [
-      { label: 'Income Tax', value: tax, color: '#1C3C24' }, // Forest Green
-      { label: 'NI', value: ni, color: '#1C3C24BF' },         // Forest Green 75%
-      { label: 'Pension', value: pension, color: '#64748B' },
-      { label: 'Student Loan', value: sl, color: '#475569' },
-      { label: 'CB Charge', value: cb, color: '#FF4D4D' },   // Red
-      { label: 'Net Pay', value: net, color: '#A8F05F', isNet: true } // Lime
+      { label: 'Income Tax', value: tax, color: '#18181B' }, // Slate
+      { label: 'NI', value: ni, color: '#18181BCC' },         // Slate 80%
+      { label: 'Pension', value: pension, color: '#F59E0B' },
+      { label: 'Student Loan', value: sl, color: '#3B82F6' },
+      { label: 'CB Charge', value: cb, color: '#DC2626' },   // Red
+      { label: 'Net Pay', value: net, color: '#FF5A1F', isNet: true } // Orange
     ].filter(d => d.value > 0)
   }, [output, input.grossIncome])
 
@@ -65,7 +65,7 @@ const SankeyDiagram: React.FC = () => {
           y={padding}
           width={nodeWidth}
           height={total * scale + (data.length - 1) * 12}
-          fill="#1C3C24"
+          fill="#18181B"
           rx={8}
         />
         <text

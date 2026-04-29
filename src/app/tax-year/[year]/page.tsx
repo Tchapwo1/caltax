@@ -130,7 +130,7 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
               </div>
             </div>
             {/* Floating Chat Bubble Icon like in reference */}
-            <div className="absolute bottom-8 right-8 w-16 h-16 bg-[#1C3C24] rounded-full flex items-center justify-center shadow-xl">
+            <div className="absolute bottom-8 right-8 w-16 h-16 bg-[#18181B] rounded-full flex items-center justify-center shadow-xl">
                <span className="text-white text-3xl">💬</span>
                <div className="absolute top-0 right-0 w-5 h-5 bg-red-500 rounded-full border-2 border-taxfix_purple flex items-center justify-center text-[10px] text-white font-bold">1</div>
             </div>
@@ -148,19 +148,19 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
               </p>
               <ul className="flex flex-col gap-4 text-lg font-bold text-text_primary">
                 <li className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-accent_primary flex items-center justify-center text-white text-xs">✓</div>
                   An intuitive and well-loved platform
                 </li>
                 <li className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-accent_primary flex items-center justify-center text-white text-xs">✓</div>
                   We can file your tax return quickly
                 </li>
                 <li className="flex items-center gap-4">
-                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-accent_primary flex items-center justify-center text-white text-xs">✓</div>
                   Your accredited accountant does it all for you
                 </li>
               </ul>
-              <Link href="/comparison" className="text-lg font-black text-text_primary underline decoration-net_profit decoration-4 underline-offset-8">
+              <Link href="/comparison" className="text-lg font-black text-text_primary underline decoration-accent_primary decoration-4 underline-offset-8">
                 Learn more
               </Link>
             </div>

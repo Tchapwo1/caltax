@@ -39,7 +39,7 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
           <h2 className="text-4xl font-black text-text_primary tracking-tighter">Understanding your UK tax</h2>
           
           {/* MSE-Style Expert Tip */}
-          <div className="bg-[#1C3C24]/5 border-l-8 border-[#A8F05F] p-8 rounded-r-[2rem] my-8">
+          <div className="bg-[#18181B]/5 border-l-8 border-[#FF5A1F] p-8 rounded-r-[2rem] my-8">
             <div className="flex items-start gap-4">
               <span className="text-2xl">💡</span>
               <div className="flex flex-col gap-2">
