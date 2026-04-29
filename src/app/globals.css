@@ -43,4 +43,12 @@
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-border_active focus-visible:ring-offset-2;
   }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 15px -3px rgba(80, 55, 237, 0.1), 0 4px 6px -2px rgba(80, 55, 237, 0.05);
+  }
 }

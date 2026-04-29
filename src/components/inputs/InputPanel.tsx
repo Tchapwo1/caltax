@@ -24,7 +24,7 @@ export const InputPanel: React.FC = () => {
   const isAdvancedOpen = status === 'advanced_open'
 
   return (
-    <div className="flex flex-col gap-space_8 p-space_6 md:p-space_8 bg-background_surface rounded-2xl shadow-sm border border-border_default h-fit">
+    <div className="flex flex-col gap-space_8 p-space_6 md:p-space_8 bg-background_surface rounded-2xl premium-shadow border border-border_default h-fit">
       <div className="flex flex-col gap-space_6">
         <div className="flex items-center gap-space_3 border-b border-border_default pb-space_4">
           <div className="w-8 h-8 rounded-full bg-action/10 flex items-center justify-center text-action">

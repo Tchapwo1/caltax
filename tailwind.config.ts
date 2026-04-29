@@ -9,16 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        text_primary: '#1A1F2C',
-        text_secondary: '#64748B',
+        text_primary: '#0F172A',
+        text_secondary: '#475569',
         background_primary: '#FFFFFF',
-        background_surface: '#F8FAFC',
-        net_profit: '#10B981',
-        deduction: '#F59E0B',
-        alert: '#EF4444',
-        action: '#3B82F6',
+        background_surface: '#F8FAFF',
+        net_profit: '#00D897', // Vibrant Mint
+        deduction: '#FF9F1C', // Vibrant Orange
+        alert: '#FF4D4D',     // Vibrant Red
+        action: '#5037ED',    // Deep Indigo
         border_default: '#E2E8F0',
-        border_active: '#3B82F6',
+        border_active: '#5037ED',
+      },
+      backgroundImage: {
+        'action-gradient': 'linear-gradient(135deg, #5037ED 0%, #7C3AED 100%)',
+        'surface-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 100%)',
       },
       fontFamily: {
         base: ['Inter', 'system-ui', 'sans-serif'],
