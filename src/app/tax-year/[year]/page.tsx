@@ -82,7 +82,7 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
         <div className="flex flex-col gap-12">
           <Link href="/calculators" className="text-lg font-bold text-text_primary flex items-center gap-2 hover:opacity-70 transition-opacity">
             <span className="text-xl font-black">&lt;-</span>
-            View all Taxfix tax calculators
+            View all TaxCalculator365 tax calculators
           </Link>
           
           <div className="flex flex-col gap-6">
@@ -109,7 +109,7 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
             <div className="flex flex-col gap-6 relative z-10 max-w-3xl">
               <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-tight">Have you sorted your tax return yet?</h2>
               <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">
-                Avoid costly mistakes and let Taxfix take care of it for you. Our UK-accredited accountants make filing quick 
+                Avoid costly mistakes and let TaxCalculator365 take care of it for you. Our UK-accredited accountants make filing quick 
                 and stress-free, starting from just £119. With the <span className="font-bold">31st January deadline</span> getting closer, now's a great time to get the official stuff out the way.
               </p>
               <div className="flex gap-4 mt-4">
@@ -132,7 +132,7 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
             <div className="flex-1 flex flex-col gap-8">
               <h2 className="text-4xl md:text-5xl font-black text-text_primary tracking-tighter leading-tight">Filing your Self Assessment: us vs HMRC</h2>
               <p className="text-xl text-text_primary font-medium leading-relaxed">
-                Filing with Taxfix is just easier. Not only that, but we’re friendlier, 
+                Filing with TaxCalculator365 is just easier. Not only that, but we’re friendlier, 
                 jargon-free and have expert accountants on our side.
               </p>
               <ul className="flex flex-col gap-4 text-lg font-bold text-text_primary">

@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Next-Gen Tax Calculator",
-  description: "Accurate UK tax calculations.",
+  title: "TaxCalculator365 | UK Income Tax Calculator",
+  description: "Accurate UK tax calculations and professional filing services.",
 };
 
 import { Navbar } from "@/components/layout/Navbar";

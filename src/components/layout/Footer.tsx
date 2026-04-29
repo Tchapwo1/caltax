@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           {/* Logo & Info */}
           <div className="md:col-span-1 flex flex-col gap-6">
             <Link href="/" className="text-3xl font-black text-text_primary tracking-tighter">
-              tax<span className="text-net_profit">.</span>fix
+              taxcalculator365<span className="text-net_profit">.</span>
             </Link>
             <p className="text-sm font-medium text-text_primary opacity-60 leading-relaxed">
               We make taxes simple. The UK's most loved tax filing platform.
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-border_default pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-xs font-medium text-text_primary opacity-40">
-            © {new Date().getFullYear()} Taxfix Limited. All rights reserved.
+            © {new Date().getFullYear()} TaxCalculator365. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="w-8 h-8 rounded-full bg-background_surface flex items-center justify-center hover:bg-net_profit transition-colors text-text_primary">𝕏</Link>

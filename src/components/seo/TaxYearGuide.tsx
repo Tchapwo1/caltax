@@ -26,18 +26,18 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
              <span className="text-xl font-black text-text_primary">£{config.personal_allowance.toLocaleString()}</span>
           </div>
           <div className="bg-background_surface rounded-2xl p-space_6 border border-border_default flex flex-col gap-1">
-             <span className="text-[10px] font-black uppercase text-text_secondary tracking-widest">Basic Rate</span>
-             <span className="text-xl font-black text-action">20%</span>
+             <span className="text-[10px] font-black uppercase text-text_primary tracking-widest opacity-40">Basic Rate</span>
+             <span className="text-xl font-black text-text_primary">20%</span>
           </div>
           <div className="bg-background_surface rounded-2xl p-space_6 border border-border_default flex flex-col gap-1">
-             <span className="text-[10px] font-black uppercase text-text_secondary tracking-widest">Tax Year</span>
+             <span className="text-[10px] font-black uppercase text-text_primary tracking-widest opacity-40">Tax Year</span>
              <span className="text-xl font-black text-text_primary">{displayYear}</span>
           </div>
         </div>
 
         <section className="flex flex-col gap-space_6">
-          <h2 className="text-3xl font-black text-text_primary tracking-tight">Understanding your UK tax</h2>
-          <div className="c-body text-text_secondary leading-relaxed space-y-6 text-md">
+          <h2 className="text-4xl font-black text-text_primary tracking-tighter">Understanding your UK tax</h2>
+          <div className="text-text_primary font-medium leading-relaxed space-y-6 text-lg opacity-80">
             <p>
               Income Tax is a contribution that most people in the UK make based on their earnings. 
               The money raised goes towards funding public services like the NHS, education, and welfare. 
@@ -55,32 +55,32 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
 
         <section className="flex flex-col gap-space_6">
           <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-black text-text_primary tracking-tight">How your income tax is calculated</h2>
-            <p className="text-text_secondary text-sm font-medium">The rates below apply to your taxable income after your Personal Allowance is deducted.</p>
+            <h2 className="text-3xl font-black text-text_primary tracking-tighter">How your income tax is calculated</h2>
+            <p className="text-text_primary text-md font-medium opacity-60">The rates below apply to your taxable income after your Personal Allowance is deducted.</p>
           </div>
           
-          <div className="overflow-hidden rounded-2xl border border-border_default shadow-sm">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-[#5037ED]/5 text-action font-black border-b border-border_default">
+          <div className="overflow-hidden rounded-[2rem] border-2 border-border_default shadow-sm">
+            <table className="w-full text-md text-left">
+              <thead className="bg-background_surface text-text_primary font-black border-b-2 border-border_default">
                 <tr>
-                  <th className="px-6 py-4 uppercase tracking-widest text-[10px]">Taxable Income Band</th>
-                  <th className="px-6 py-4 uppercase tracking-widest text-[10px]">Tax Rate</th>
-                  <th className="px-6 py-4 uppercase tracking-widest text-[10px]">Status</th>
+                  <th className="px-8 py-6 uppercase tracking-widest text-[12px] opacity-40">Taxable Income Band</th>
+                  <th className="px-8 py-6 uppercase tracking-widest text-[12px] opacity-40">Tax Rate</th>
+                  <th className="px-8 py-6 uppercase tracking-widest text-[12px] opacity-40">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border_default bg-white">
+              <tbody className="divide-y-2 divide-border_default bg-white">
                 <tr>
-                  <td className="px-6 py-4 font-bold text-text_primary">Up to £{config.personal_allowance.toLocaleString()}</td>
-                  <td className="px-6 py-4">0%</td>
-                  <td className="px-6 py-4 text-text_secondary">Personal Allowance</td>
+                  <td className="px-8 py-6 font-black text-text_primary text-lg">Up to £{config.personal_allowance.toLocaleString()}</td>
+                  <td className="px-8 py-6 font-bold">0%</td>
+                  <td className="px-8 py-6 text-text_primary opacity-60">Personal Allowance</td>
                 </tr>
                 {config.income_tax_bands.map((band, i) => (
                   <tr key={i} className="hover:bg-background_surface/50 transition-colors">
-                    <td className="px-6 py-4 font-bold text-text_primary">
+                    <td className="px-8 py-6 font-black text-text_primary text-lg">
                       £{(band.from + 1).toLocaleString()} {band.to ? `to £${band.to.toLocaleString()}` : '+'}
                     </td>
-                    <td className="px-6 py-4 text-action font-black">{band.rate * 100}%</td>
-                    <td className="px-6 py-4 text-capitalize font-medium">{(band.band || 'Standard').replace('_', ' ')} Rate</td>
+                    <td className="px-8 py-6 text-text_primary font-black text-xl">{band.rate * 100}%</td>
+                    <td className="px-8 py-6 font-bold opacity-60">{(band.band || 'Standard').replace('_', ' ')} Rate</td>
                   </tr>
                 ))}
               </tbody>
@@ -89,8 +89,8 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
         </section>
 
         <section className="flex flex-col gap-space_6">
-          <h2 className="text-2xl font-black text-text_primary tracking-tight">What is National Insurance?</h2>
-          <div className="c-body text-text_secondary leading-relaxed space-y-4 text-md">
+          <h2 className="text-3xl font-black text-text_primary tracking-tighter">What is National Insurance?</h2>
+          <div className="text-text_primary font-medium leading-relaxed space-y-4 text-lg opacity-80">
             <p>
               National Insurance (NI) is a separate tax on your earnings. It pays for certain benefits and the state pension. 
               The amount you pay depends on whether you are employed or self-employed, and how much you earn.
@@ -102,14 +102,14 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
           </div>
         </section>
 
-        <div className="bg-action rounded-[2rem] p-space_10 text-white relative overflow-hidden shadow-xl">
-          <div className="absolute top-0 right-0 -mr-12 -mt-12 w-48 h-48 bg-white/10 rounded-full blur-2xl" />
-          <h3 className="text-xl font-black mb-space_2 relative z-10">Expert Tax Advice</h3>
-          <p className="text-white/80 font-medium text-sm leading-relaxed relative z-10 max-w-2xl mb-space_6">
+        <div className="bg-taxfix_purple rounded-[3rem] p-12 md:p-20 text-text_primary relative overflow-hidden shadow-sm">
+          <div className="absolute top-0 right-0 -mr-12 -mt-12 w-48 h-48 bg-white/20 rounded-full blur-2xl" />
+          <h3 className="text-3xl font-black mb-4 relative z-10 tracking-tighter">Expert Tax Advice</h3>
+          <p className="text-text_primary font-medium text-lg leading-relaxed relative z-10 max-w-2xl mb-8 opacity-80">
             Taxes can be complicated, especially if you have multiple income sources or high earnings. 
             Our accredited accountants are here to help you maximize your take-home pay legally and safely.
           </p>
-          <button className="bg-white text-action px-space_8 py-3 rounded-full font-black text-sm uppercase tracking-wider hover:scale-105 transition-transform relative z-10">
+          <button className="bg-text_primary text-white px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-transform relative z-10 shadow-lg">
             Talk to an Expert
           </button>
         </div>

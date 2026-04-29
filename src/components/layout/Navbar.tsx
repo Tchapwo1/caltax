@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1 group">
           <span className="text-3xl font-black text-text_primary tracking-tighter">
-            tax<span className="text-net_profit">.</span>fix
+            taxcalculator365<span className="text-net_profit">.</span>
           </span>
         </Link>
 
