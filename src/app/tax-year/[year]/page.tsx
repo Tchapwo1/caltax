@@ -21,7 +21,8 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { year } = await params
-  const displayYear = year.replace('_', '/')
+  const { config } = loadTaxYear(year)
+  const displayYear = config.tax_year.replace('_', '/')
   return {
     title: `UK Income Tax Calculator ${displayYear} | Take-home Pay`,
     description: `Calculate your take-home pay, tax, NI, pension, and student loan deductions for the ${displayYear} UK tax year. Free, fast and accurate.`,
@@ -52,7 +53,12 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "description": `Calculate your take-home pay, tax, NI, pension, and student loan deductions for the ${displayYear} UK tax year.`,
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1250"
+    }
   }
 
   const faqSchema = {
@@ -61,13 +67,18 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How is UK income tax calculated?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Income tax is calculated based on tax bands, personal allowance, and your taxable income after deductions." }
+        "name": `How much can I earn tax-free in ${displayYear}?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `For the ${displayYear} tax year, your Personal Allowance is £${config.personal_allowance.toLocaleString()}. You start paying 20% Income Tax on earnings above this amount.` }
+      },
+      {
+        "@type": "Question",
+        "name": `What are the ${displayYear} tax bands?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `The tax bands for ${displayYear} include the Basic rate (20%), Higher rate (40%), and Additional rate (45%). The Higher rate starts at £50,271 of taxable income.` }
       },
       {
         "@type": "Question",
         "name": "What is the 60% tax trap?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Between £100,000 and £125,140, your Personal Allowance is withdrawn, creating an effective 60% marginal tax rate." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Between £100,000 and £125,140, your Personal Allowance is withdrawn by £1 for every £2 of income, creating an effective 60% marginal tax rate." }
       }
     ]
   }

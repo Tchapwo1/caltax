@@ -37,6 +37,21 @@ export const TaxYearGuide: React.FC<Props> = ({ config }) => {
 
         <section className="flex flex-col gap-space_6">
           <h2 className="text-4xl font-black text-text_primary tracking-tighter">Understanding your UK tax</h2>
+          
+          {/* MSE-Style Expert Tip */}
+          <div className="bg-[#1C3C24]/5 border-l-8 border-[#A8F05F] p-8 rounded-r-[2rem] my-8">
+            <div className="flex items-start gap-4">
+              <span className="text-2xl">💡</span>
+              <div className="flex flex-col gap-2">
+                <span className="text-sm font-black uppercase text-text_primary tracking-widest">Expert Tip</span>
+                <p className="text-lg font-bold text-text_primary leading-tight">
+                  Watch out for the "60% Tax Trap" if you earn between £100,000 and £125,140. 
+                  Your personal allowance is withdrawn, making this the most expensive income bracket in the UK.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="text-text_primary font-medium leading-relaxed space-y-6 text-lg opacity-80">
             <p>
               Income Tax is a contribution that most people in the UK make based on their earnings. 

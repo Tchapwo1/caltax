@@ -9,7 +9,20 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "TaxCalculator365 | UK Income Tax Calculator",
-  description: "Accurate UK tax calculations and professional filing services.",
+  description: "Accurate UK tax calculations and professional filing services. Calculate your take-home pay given income tax rates, national insurance, pensions and more.",
+  openGraph: {
+    title: "TaxCalculator365 | UK Income Tax Calculator",
+    description: "Find out exactly how much you'll take home after tax and NI.",
+    url: "https://taxcalculator365.com",
+    siteName: "TaxCalculator365",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TaxCalculator365 | UK Income Tax Calculator",
+    description: "The UK's most loved tax calculator.",
+  },
+  robots: "index, follow",
 };
 
 import { Navbar } from "@/components/layout/Navbar";
