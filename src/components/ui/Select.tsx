@@ -29,38 +29,31 @@ export const Select: React.FC<SelectProps> = ({
   disabled = false
 }) => {
   return (
-    <div className="flex flex-col gap-space_2 w-full">
-      <label 
-        htmlFor={id} 
-        className={`text-sm font-medium ${disabled ? 'text-text_secondary/50' : 'text-text_primary'}`}
-      >
+    <div className="flex flex-col gap-3 w-full">
+      <label htmlFor={id} className="text-lg font-black text-text_primary tracking-tight">
         {label}
       </label>
       
-      <div className="relative">
+      <div className="relative group">
         <select
           id={id}
           value={value}
-          disabled={disabled}
           onChange={(e) => onChange(e.target.value)}
           className={`
-            w-full appearance-none bg-background_primary border border-border_default rounded-md 
-            px-space_3 py-space_2 text-md text-text_primary outline-none transition-all
-            focus:border-action focus:ring-2 focus:ring-action/20
-            ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+            w-full px-4 py-4 rounded-xl border-2 text-lg transition-all appearance-none outline-none font-medium
+            border-border_default focus:border-text_primary
+            bg-white text-text_primary cursor-pointer
           `}
         >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
+          {options.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
             </option>
           ))}
         </select>
-        
-        {/* Custom arrow icon */}
-        <div className="absolute right-space_3 top-1/2 -translate-y-1/2 pointer-events-none text-text_secondary">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-text_primary">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </div>

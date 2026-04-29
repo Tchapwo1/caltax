@@ -30,24 +30,20 @@ export const Accordion: React.FC<AccordionProps> = ({
         aria-expanded={isOpen}
         aria-controls={`${id}-content`}
         onClick={onToggle}
-        className="flex items-center justify-between w-full py-space_4 text-left focus:outline-none group"
+        className="w-full flex items-center justify-between py-6 group"
       >
-        <span className="text-md font-semibold text-text_primary group-hover:text-action transition-colors">
+        <span className="text-xl font-black text-text_primary tracking-tight group-hover:opacity-70 transition-opacity">
           {title}
         </span>
-        <svg
-          className={`w-5 h-5 text-text_secondary transition-transform duration-medium ease-standard ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <div className={`
+          w-8 h-8 rounded-full border-2 border-border_default flex items-center justify-center
+          transition-all duration-300 group-hover:border-text_primary
+          ${isOpen ? 'rotate-180 bg-text_primary border-text_primary text-white' : 'text-text_primary'}
+        `}>
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </button>
       
       <div

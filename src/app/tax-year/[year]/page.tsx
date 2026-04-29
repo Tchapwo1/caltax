@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { loadTaxYear, getAvailableTaxYears } from '@/lib/store/taxYear'
 import { CalculatorContainer } from '@/components/CalculatorContainer'
 import { JSONLD } from '@/components/seo/JSONLD'
@@ -72,25 +73,92 @@ export default async function TaxYearPage({ params, searchParams }: PageProps) {
   }
 
   return (
-    <main className="container mx-auto px-space_4 py-space_10 max-w-6xl">
+    <main className="bg-white min-h-screen">
       <JSONLD data={softwareSchema} />
       <JSONLD data={faqSchema} />
       
-      <div className="flex flex-col gap-space_10">
-        <header className="flex flex-col gap-space_2">
-          <h1 className="text-3xl font-bold text-text_primary">
-            UK Income Tax Calculator <span className="text-action">{displayYear}</span>
-          </h1>
-          <p className="text-md text-text_secondary max-w-2xl">
-            Detailed breakdown of your salary after Income Tax, National Insurance, 
-            Pension, and Student Loan deductions.
-          </p>
-        </header>
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 pt-24 pb-12 max-w-7xl">
+        <div className="flex flex-col gap-12">
+          <Link href="/calculators" className="text-lg font-bold text-text_primary flex items-center gap-2 hover:opacity-70 transition-opacity">
+            <span className="text-xl font-black">&lt;-</span>
+            View all Taxfix tax calculators
+          </Link>
+          
+          <div className="flex flex-col gap-6">
+            <h1 className="text-5xl md:text-8xl font-black text-text_primary tracking-tighter leading-[0.9]">
+              Income tax calculator UK
+            </h1>
+            <p className="text-xl md:text-2xl text-text_primary font-medium leading-relaxed max-w-3xl">
+              Quickly calculate how much tax you need to pay on your income.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <CalculatorContainer config={config} initialInput={initialInput} />
-        
-        <TaxYearGuide config={config} />
-      </div>
+      <section className="container mx-auto px-6 pb-24 max-w-7xl">
+        <div className="flex flex-col gap-24">
+          
+          {/* Calculator Container with massive padding */}
+          <div className="bg-background_surface rounded-[3rem] p-8 md:p-16">
+            <CalculatorContainer config={config} initialInput={initialInput} />
+          </div>
+
+          {/* Primary CTA Box - Taxfix Purple */}
+          <div className="bg-taxfix_purple rounded-[3rem] p-12 md:p-24 text-text_primary flex flex-col items-start gap-8 relative overflow-hidden shadow-sm">
+            <div className="flex flex-col gap-6 relative z-10 max-w-3xl">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-tight">Have you sorted your tax return yet?</h2>
+              <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">
+                Avoid costly mistakes and let Taxfix take care of it for you. Our UK-accredited accountants make filing quick 
+                and stress-free, starting from just £119. With the <span className="font-bold">31st January deadline</span> getting closer, now's a great time to get the official stuff out the way.
+              </p>
+              <div className="flex gap-4 mt-4">
+                <Link href="/get-started" className="bg-text_primary text-white px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-transform shadow-lg">
+                  Start now
+                </Link>
+              </div>
+            </div>
+            {/* Floating Chat Bubble Icon like in reference */}
+            <div className="absolute bottom-8 right-8 w-16 h-16 bg-[#1C3C24] rounded-full flex items-center justify-center shadow-xl">
+               <span className="text-white text-3xl">💬</span>
+               <div className="absolute top-0 right-0 w-5 h-5 bg-red-500 rounded-full border-2 border-taxfix_purple flex items-center justify-center text-[10px] text-white font-bold">1</div>
+            </div>
+          </div>
+
+          <TaxYearGuide config={config} />
+          
+          {/* Filing Comparison Section */}
+          <section className="flex flex-col md:flex-row gap-24 items-center">
+            <div className="flex-1 flex flex-col gap-8">
+              <h2 className="text-4xl md:text-5xl font-black text-text_primary tracking-tighter leading-tight">Filing your Self Assessment: us vs HMRC</h2>
+              <p className="text-xl text-text_primary font-medium leading-relaxed">
+                Filing with Taxfix is just easier. Not only that, but we’re friendlier, 
+                jargon-free and have expert accountants on our side.
+              </p>
+              <ul className="flex flex-col gap-4 text-lg font-bold text-text_primary">
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  An intuitive and well-loved platform
+                </li>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  We can file your tax return quickly
+                </li>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-net_profit flex items-center justify-center text-text_primary text-xs">✓</div>
+                  Your accredited accountant does it all for you
+                </li>
+              </ul>
+              <Link href="/comparison" className="text-lg font-black text-text_primary underline decoration-net_profit decoration-4 underline-offset-8">
+                Learn more
+              </Link>
+            </div>
+            <div className="flex-1 w-full bg-background_surface rounded-[3rem] aspect-square flex items-center justify-center p-12">
+               <div className="w-full h-full bg-white rounded-[2rem] shadow-2xl border border-border_default" />
+            </div>
+          </section>
+        </div>
+      </section>
     </main>
   )
 }

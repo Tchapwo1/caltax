@@ -18,6 +18,8 @@ export const ResultsPanel: React.FC = () => {
 
   const isEditing = status === 'editing' || status === 'calculating'
 
+  const [showDetails, setShowDetails] = React.useState(false)
+
   return (
     <div className={`flex flex-col gap-space_8 transition-opacity duration-medium ${isEditing ? 'opacity-60' : 'opacity-100'}`}>
       <div className="flex flex-col gap-space_6">
@@ -31,7 +33,27 @@ export const ResultsPanel: React.FC = () => {
             <AlertBanner />
             <PaymentPlanner />
             <SankeyWrapper />
-            <TaxBreakdownTable />
+            
+            <div className="bg-white rounded-2xl border border-border_default overflow-hidden">
+              <button 
+                onClick={() => setShowDetails(!showDetails)}
+                className="w-full flex items-center justify-between p-space_6 text-left hover:bg-background_surface transition-colors"
+              >
+                <div className="flex flex-col gap-1">
+                  <span className="text-lg font-black text-text_primary tracking-tight">Calculation details</span>
+                  <span className="text-xs font-bold text-text_secondary uppercase tracking-widest">See exactly how we calculated your tax</span>
+                </div>
+                <div className={`w-8 h-8 rounded-full border border-border_default flex items-center justify-center transition-transform ${showDetails ? 'rotate-180' : ''}`}>
+                  <svg className="w-4 h-4 text-text_secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" /></svg>
+                </div>
+              </button>
+              
+              {showDetails && (
+                <div className="border-t border-border_default p-space_6 animate-in slide-in-from-top-2 duration-medium">
+                  <TaxBreakdownTable />
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>

@@ -9,16 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        text_primary: '#0F172A',
-        text_secondary: '#475569',
+        text_primary: '#1C3C24', // Taxfix Forest Green
+        text_secondary: '#1C3C24BF', // 75% Forest Green
         background_primary: '#FFFFFF',
-        background_surface: '#F8FAFF',
-        net_profit: '#00D897', // Vibrant Mint
-        deduction: '#FF9F1C', // Vibrant Orange
-        alert: '#FF4D4D',     // Vibrant Red
-        action: '#5037ED',    // Deep Indigo
+        background_surface: '#F8F9F7',
+        net_profit: '#A8F05F', // Taxfix Lime Button
+        deduction: '#FF9F1C', 
+        alert: '#FF4D4D',
+        action: '#A8F05F', // Primary action is now the Lime Green
+        taxfix_lime: '#D2F5A9', // Background Lime
+        taxfix_purple: '#DCC8FF', // CTA Purple
         border_default: '#E2E8F0',
-        border_active: '#5037ED',
+        border_active: '#1C3C24',
       },
       backgroundImage: {
         'action-gradient': 'linear-gradient(135deg, #5037ED 0%, #7C3AED 100%)',

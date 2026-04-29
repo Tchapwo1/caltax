@@ -24,41 +24,33 @@ export const Toggle: React.FC<ToggleProps> = ({
   disabled = false
 }) => {
   return (
-    <div className="flex items-center justify-between gap-space_4 py-space_2">
-      <div className="flex flex-col gap-space_0.5">
-        <label 
-          htmlFor={id} 
-          className={`text-sm font-medium ${disabled ? 'text-text_secondary/50' : 'text-text_primary'}`}
-        >
+    <div className="flex items-center justify-between py-2">
+      <div className="flex flex-col gap-1">
+        <label htmlFor={id} className="text-lg font-black text-text_primary tracking-tight cursor-pointer">
           {label}
         </label>
         {description && (
-          <span className="text-xs text-text_secondary leading-tight">
-            {description}
-          </span>
+          <span className="text-sm font-medium text-text_primary opacity-40">{description}</span>
         )}
       </div>
       
       <button
-        id={id}
         type="button"
         role="switch"
         aria-checked={checked}
-        disabled={disabled}
         onClick={() => onChange(!checked)}
         className={`
-          relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent 
-          transition-colors duration-medium ease-standard focus:outline-none focus:ring-2 focus:ring-action/20
-          ${checked ? 'bg-action' : 'bg-slate-200'}
-          ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
+          relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent 
+          transition-colors duration-200 ease-in-out outline-none
+          ${checked ? 'bg-net_profit' : 'bg-border_default'}
         `}
       >
         <span
           aria-hidden="true"
           className={`
-            pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 
-            transition duration-medium ease-standard
-            ${checked ? 'translate-x-5' : 'translate-x-0'}
+            pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 
+            transition duration-200 ease-in-out mt-[2px] ml-[2px]
+            ${checked ? 'translate-x-6' : 'translate-x-0'}
           `}
         />
       </button>

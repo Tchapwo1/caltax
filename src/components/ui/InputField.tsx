@@ -47,19 +47,19 @@ export const InputField: React.FC<InputFieldProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-space_2 w-full">
+    <div className="flex flex-col gap-3 w-full">
       <div className="flex justify-between items-baseline">
-        <label htmlFor={id} className="text-sm font-medium text-text_primary">
+        <label htmlFor={id} className="text-lg font-black text-text_primary tracking-tight">
           {label}
         </label>
         {description && (
-          <span className="text-xs text-text_secondary">{description}</span>
+          <span className="text-sm font-medium text-text_primary opacity-40">{description}</span>
         )}
       </div>
       
       <div className="relative">
         {type === 'currency' && (
-          <div className="absolute left-space_3 top-1/2 -translate-y-1/2 text-text_secondary pointer-events-none">
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-text_primary font-bold pointer-events-none">
             £
           </div>
         )}
@@ -73,15 +73,15 @@ export const InputField: React.FC<InputFieldProps> = ({
           step={step}
           placeholder={placeholder}
           className={`
-            w-full px-space_3 py-space_2 rounded-md border text-md transition-all
-            ${type === 'currency' ? 'pl-space_7' : ''}
-            ${type === 'percentage' ? 'pr-space_7' : ''}
+            w-full px-4 py-4 rounded-xl border-2 text-lg transition-all font-medium
+            ${type === 'currency' ? 'pl-8' : ''}
+            ${type === 'percentage' ? 'pr-8' : ''}
             ${error 
               ? 'border-alert focus:ring-alert focus:border-alert' 
-              : 'border-border_default focus:border-action focus:ring-2 focus:ring-action/20'
+              : 'border-border_default focus:border-text_primary focus:ring-0'
             }
-            bg-background_primary text-text_primary outline-none
-            placeholder:text-text_secondary/50
+            bg-white text-text_primary outline-none
+            placeholder:text-text_primary placeholder:opacity-20
           `}
         />
         {type === 'percentage' && (

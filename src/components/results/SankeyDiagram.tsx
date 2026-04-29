@@ -28,12 +28,12 @@ const SankeyDiagram: React.FC = () => {
     const net = output.netPay
 
     return [
-      { label: 'Income Tax', value: tax, color: '#FF9F1C' }, // Deduction Orange
-      { label: 'NI', value: ni, color: '#FF9F1C' },         // Deduction Orange
+      { label: 'Income Tax', value: tax, color: '#1C3C24' }, // Forest Green
+      { label: 'NI', value: ni, color: '#1C3C24BF' },         // Forest Green 75%
       { label: 'Pension', value: pension, color: '#64748B' },
-      { label: 'Student Loan', value: sl, color: '#64748B' },
-      { label: 'CB Charge', value: cb, color: '#FF4D4D' },   // Alert Red
-      { label: 'Net Pay', value: net, color: '#00D897', isNet: true } // Mint Green
+      { label: 'Student Loan', value: sl, color: '#475569' },
+      { label: 'CB Charge', value: cb, color: '#FF4D4D' },   // Red
+      { label: 'Net Pay', value: net, color: '#A8F05F', isNet: true } // Lime
     ].filter(d => d.value > 0)
   }, [output, input.grossIncome])
 
@@ -41,47 +41,50 @@ const SankeyDiagram: React.FC = () => {
 
   // SVG Layout constants
   const width = 600
-  const height = 300
-  const nodeWidth = 20
-  const padding = 20
-  const col1 = padding
-  const col2 = width - nodeWidth - padding
+  const height = 340
+  const nodeWidth = 16
+  const padding = 30
+  const col1 = 100
+  const col2 = 450
   
   const total = input.grossIncome
-  const scale = (height - padding * 2 - (data.length - 1) * 10) / total
+  const scale = (height - padding * 2 - (data.length - 1) * 12) / total
 
   let currentY = padding
 
   return (
-    <div className="w-full bg-background_primary p-space_4 rounded-lg border border-border_default shadow-sm">
-      <h3 className="text-sm font-bold text-text_primary mb-space_4">Cash Flow Diagram</h3>
+    <div className="w-full bg-white p-space_8 rounded-3xl border border-border_default shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+      <div className="flex flex-col gap-1 mb-space_6">
+        <h3 className="text-lg font-black text-text_primary tracking-tight">Your Cash Flow</h3>
+        <p className="text-xs font-bold text-text_secondary uppercase tracking-widest">Where your money goes</p>
+      </div>
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto">
         {/* Gross Node */}
         <rect
           x={col1}
           y={padding}
           width={nodeWidth}
-          height={total * scale + (data.length - 1) * 10}
-          fill="#5037ED"
-          rx={4}
+          height={total * scale + (data.length - 1) * 12}
+          fill="#1C3C24"
+          rx={8}
         />
         <text
-          x={col1 - 8}
+          x={col1 - 12}
           y={padding + (total * scale) / 2}
           textAnchor="end"
           dominantBaseline="middle"
-          className="text-[12px] font-bold fill-text_primary"
+          className="text-[14px] font-black fill-text_primary tracking-tighter"
         >
-          Gross
+          Gross Income
         </text>
 
         {/* Links & Output Nodes */}
         {data.map((item, i) => {
-          const h = item.value * scale
+          const h = Math.max(2, item.value * scale)
           const y = currentY
-          const sy = padding + (i * 10) + (data.slice(0, i).reduce((sum, d) => sum + d.value, 0) * scale)
+          const sy = padding + (i * 12) + (data.slice(0, i).reduce((sum, d) => sum + d.value, 0) * scale)
           
-          currentY += h + 10
+          currentY += h + 12
 
           // Cubic Bezier Path
           const x0 = col1 + nodeWidth
@@ -97,21 +100,27 @@ const SankeyDiagram: React.FC = () => {
           `
 
           return (
-            <g key={i}>
-              <path d={path} fill={item.color} opacity={0.2} />
+            <g key={i} className="group cursor-help">
+              <path 
+                d={path} 
+                fill={item.color} 
+                opacity={0.15} 
+                className="transition-opacity group-hover:opacity-30" 
+              />
               <rect
                 x={col2}
                 y={y}
                 width={nodeWidth}
                 height={h}
                 fill={item.color}
-                rx={2}
+                rx={4}
+                className="transition-all group-hover:scale-x-110"
               />
               <text
-                x={col2 + nodeWidth + 8}
+                x={col2 + nodeWidth + 12}
                 y={y + h / 2}
                 dominantBaseline="middle"
-                className="text-[10px] font-medium fill-text_secondary"
+                className={`text-[12px] font-bold ${item.isNet ? 'fill-action' : 'fill-text_secondary'}`}
               >
                 {item.label}
               </text>

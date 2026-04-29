@@ -24,16 +24,16 @@ export const InputPanel: React.FC = () => {
   const isAdvancedOpen = status === 'advanced_open'
 
   return (
-    <div className="flex flex-col gap-space_8 p-space_6 md:p-space_8 bg-background_surface rounded-2xl premium-shadow border border-border_default h-fit">
-      <div className="flex flex-col gap-space_6">
-        <div className="flex items-center gap-space_3 border-b border-border_default pb-space_4">
-          <div className="w-8 h-8 rounded-full bg-action/10 flex items-center justify-center text-action">
-            <span className="font-bold text-xs uppercase">01</span>
+    <div className="flex flex-col gap-12 p-8 md:p-12 bg-white rounded-[3rem] shadow-sm border border-border_default h-fit">
+      <div className="flex flex-col gap-8">
+        <div className="flex items-center gap-4 border-b border-border_default pb-6">
+          <div className="text-text_primary opacity-30">
+            <span className="text-xl font-black">01</span>
           </div>
-          <h2 className="text-xl font-black text-text_primary tracking-tight">Your Situation</h2>
+          <h2 className="text-2xl font-black text-text_primary tracking-tighter">Your Situation</h2>
         </div>
 
-      <div className="flex flex-col gap-space_6">
+      <div className="flex flex-col gap-8">
         <GrossIncomeInput />
         <TaxYearSelect />
         <EmploymentTypeToggle />
@@ -56,12 +56,12 @@ export const InputPanel: React.FC = () => {
       </div>
     </div>
 
-    <div className="pt-space_2">
-        <div className="flex items-center gap-space_3 border-b border-border_default pb-space_4 mb-space_6">
-          <div className="w-8 h-8 rounded-full bg-action/10 flex items-center justify-center text-action">
-            <span className="font-bold text-xs uppercase">02</span>
+    <div className="pt-4">
+        <div className="flex items-center gap-4 border-b border-border_default pb-6 mb-8">
+          <div className="text-text_primary opacity-30">
+            <span className="text-xl font-black">02</span>
           </div>
-          <h2 className="text-xl font-black text-text_primary tracking-tight">Deductions</h2>
+          <h2 className="text-2xl font-black text-text_primary tracking-tighter">Deductions</h2>
         </div>
         <Accordion
           id="advanced-options"
