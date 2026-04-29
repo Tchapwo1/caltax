@@ -1,0 +1,56 @@
+{
+  "tax_year": "2026_2027",
+  "verified_against": "HMRC 2026/27 Autumn Budget Projections",
+  "personal_allowance": 12570,
+  "personal_allowance_taper_from": 100000,
+  "personal_allowance_taper_rate": 0.5,
+  "blind_persons_allowance": 3070,
+  "income_tax_bands": [
+    { "band": "basic", "from": 12570, "to": 50270, "rate": 0.20 },
+    { "band": "higher", "from": 50270, "to": 125140, "rate": 0.40 },
+    { "band": "additional", "from": 125140, "to": null, "rate": 0.45 }
+  ],
+  "scottish_tax_bands": [
+    { "band": "starter", "from": 12570, "to": 15397, "rate": 0.19 },
+    { "band": "basic", "from": 15397, "to": 27491, "rate": 0.20 },
+    { "band": "intermediate", "from": 27491, "to": 43662, "rate": 0.21 },
+    { "band": "higher", "from": 43662, "to": 75000, "rate": 0.42 },
+    { "band": "advanced", "from": 75000, "to": 125140, "rate": 0.45 },
+    { "band": "top", "from": 125140, "to": null, "rate": 0.48 }
+  ],
+  "ni_employee_class1": [
+    { "from": 0, "to": 12570, "rate": 0.00 },
+    { "from": 12570, "to": 50270, "rate": 0.08 },
+    { "from": 50270, "to": null, "rate": 0.02 }
+  ],
+  "ni_self_employed_class4": [
+    { "from": 0, "to": 12570, "rate": 0.00 },
+    { "from": 12570, "to": 50270, "rate": 0.06 },
+    { "from": 50270, "to": null, "rate": 0.02 }
+  ],
+  "student_loan_plans": [
+    { "plan": "Plan1", "annual_threshold": 24990, "rate": 0.09 },
+    { "plan": "Plan2", "annual_threshold": 27295, "rate": 0.09 },
+    { "plan": "Plan4", "annual_threshold": 31395, "rate": 0.09 },
+    { "plan": "Plan5", "annual_threshold": 25000, "rate": 0.09 },
+    { "plan": "Postgraduate", "annual_threshold": 21000, "rate": 0.06 }
+  ],
+  "child_benefit_rates": {
+    "first_child_weekly": 26.05,
+    "additional_child_weekly": 17.25,
+    "hicbc_threshold": 60000,
+    "hicbc_taper_per_pound": 0.005
+  },
+  "pension_rules": {
+    "annual_allowance": 60000,
+    "tapered_allowance_floor": 10000,
+    "tapered_threshold": 260000,
+    "salary_sacrifice_reduces_ni": true
+  },
+  "alert_thresholds": {
+    "cliff_edge_lower": 100000,
+    "cliff_edge_upper": 125140,
+    "child_benefit_charge": 60000,
+    "allowance_fully_withdrawn": 125140
+  }
+}
