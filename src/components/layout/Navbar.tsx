@@ -25,9 +25,9 @@ export const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
           <Link href="/tax-returns" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Tax Returns</Link>
-          <Link href="/mtd" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Making Tax Digital (MTD)</Link>
+          <Link href="/accountants" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Find an Accountant</Link>
+          <Link href="/mtd" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">MTD</Link>
           <Link href="/advice" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Tax Advice</Link>
-          <Link href="/company-services" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Company services</Link>
           <Link href="/resources" className="text-sm font-semibold text-text_primary hover:opacity-70 transition-opacity">Resources</Link>
         </nav>
 

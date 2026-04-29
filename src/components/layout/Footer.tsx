@@ -26,10 +26,10 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col gap-6">
             <h4 className="font-black text-text_primary uppercase tracking-widest text-xs opacity-40">Services</h4>
             <ul className="flex flex-col gap-4">
+              <li><Link href="/accountants" className="text-sm font-bold text-text_primary hover:opacity-70 transition-opacity">Find an Accountant</Link></li>
               <li><Link href="/returns" className="text-sm font-bold text-text_primary hover:opacity-70 transition-opacity">Tax Returns</Link></li>
               <li><Link href="/mtd" className="text-sm font-bold text-text_primary hover:opacity-70 transition-opacity">MTD for Landlords</Link></li>
               <li><Link href="/advice" className="text-sm font-bold text-text_primary hover:opacity-70 transition-opacity">Tax Advice</Link></li>
-              <li><Link href="/companies" className="text-sm font-bold text-text_primary hover:opacity-70 transition-opacity">Company services</Link></li>
             </ul>
           </div>
 
